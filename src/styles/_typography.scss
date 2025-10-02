@@ -1,0 +1,39 @@
+@use "sass:map";
+
+$heading-scale: (
+  h1: (size-px: 56px, size-rem: 3.5rem, line-height: 120%),
+  h2: (size-px: 48px, size-rem: 3rem, line-height: 120%),
+  h3: (size-px: 40px, size-rem: 2.5rem, line-height: 120%),
+  h4: (size-px: 24px, size-rem: 1.5rem, line-height: 140%),
+  h5: (size-px: 24px, size-rem: 1.5rem, line-height: 140%),
+  h6: (size-px: 20px, size-rem: 1.25rem, line-height: 140%)
+);
+
+@mixin heading($level) {
+  $config: map.get($heading-scale, $level);
+
+  @if $config == null {
+    @error "Heading level `#{$level}` not found in scale.";
+  }
+
+  font-size: map.get($config, size-px);
+  font-size: map.get($config, size-rem);
+  line-height: map.get($config, line-height);
+  font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 { @include heading(h1); }
+h2 { @include heading(h2); }
+h3 { @include heading(h3); }
+h4 { @include heading(h4); }
+h5 { @include heading(h5); }
+h6 { @include heading(h6); }

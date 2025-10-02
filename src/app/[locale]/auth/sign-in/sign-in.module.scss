@@ -1,0 +1,143 @@
+.wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-bg-gray);
+  padding: 3rem 1rem;
+}
+
+.card {
+  width: min(100%, 420px);
+  background: var(--color-white);
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 24px 60px rgba(52, 59, 110, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.headerTitle {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+  color: var(--color-purple);
+}
+
+.headerSubtitle {
+  color: var(--color-text-gray);
+  font-size: 0.95rem;
+}
+
+.alert {
+  margin-bottom: 1rem;
+}
+
+.formGroup {
+  margin-bottom: 1rem;
+}
+
+.labelRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.35rem;
+}
+
+.label {
+  font-weight: 600;
+  color: var(--color-purple);
+}
+
+.forgotLink {
+  font-size: 0.85rem;
+  text-decoration: none;
+  color: var(--color-primary-1);
+}
+
+.input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  border: 1px solid rgba(52, 59, 110, 0.2);
+  transition: border 0.15s ease, box-shadow 0.15s ease;
+}
+
+.input:focus {
+  border-color: var(--color-purple);
+  box-shadow: 0 0 0 4px rgba(52, 59, 110, 0.15);
+  outline: none;
+}
+
+.inputError {
+  border-color: var(--color-red);
+}
+
+.errorText {
+  color: var(--color-red);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.checkboxLabel input {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.secondaryAction {
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.secondaryAction a {
+  color: var(--color-primary-1);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+:global([dir="rtl"]) .header,
+:global([dir="rtl"]) .secondaryAction {
+  text-align: center;
+}
+
+:global([dir="rtl"]) .labelRow {
+  flex-direction: row-reverse;
+}
+
+:global([dir="rtl"]) .checkboxRow {
+  flex-direction: row-reverse;
+}
+
+:global([dir="rtl"]) .checkboxLabel {
+  flex-direction: row-reverse;
+}
+
+@media (max-width: 576px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+}

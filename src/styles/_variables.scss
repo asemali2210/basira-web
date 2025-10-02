@@ -1,0 +1,30 @@
+// Color palette
+$color-primary-1: #F15D41;
+$color-primary-1-light: #FDF7E5;
+$color-purple: #343B6E;
+$color-purple-light: #EAEDFF; // Assumes provided EAEDFF is the intended light purple
+$color-text-gray: #707070;
+$color-black: #000000;
+$color-bg-gray: #DFDFDF;
+$color-green: #097B09;
+$color-green-light: #E8FFE8; // Corrected trailing z from request
+$color-yellow: #FFD372;
+$color-yellow-light: #FFFADD;
+$color-red: #C20202;
+$color-white: #FFFFFF;
+
+:root {
+  --color-primary-1: #{$color-primary-1};
+  --color-primary-1-light: #{$color-primary-1-light};
+  --color-purple: #{$color-purple};
+  --color-purple-light: #{$color-purple-light};
+  --color-text-gray: #{$color-text-gray};
+  --color-black: #{$color-black};
+  --color-bg-gray: #{$color-bg-gray};
+  --color-green: #{$color-green};
+  --color-green-light: #{$color-green-light};
+  --color-yellow: #{$color-yellow};
+  --color-yellow-light: #{$color-yellow-light};
+  --color-red: #{$color-red};
+  --color-white: #{$color-white};
+}

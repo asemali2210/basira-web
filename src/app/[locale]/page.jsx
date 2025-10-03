@@ -1,12 +1,13 @@
-import { getTranslations } from "next-intl/server";
-import Button from "@/components/ui/Button/Button";
+import Overview from "@/components/Main/Overview/Overview";
 
-export default async function Home() {
-  const t = await getTranslations("home");
-
+export default function HomePage() {
   return (
-    <div>
-      <Button href="/auth/sign-in">{t("title")}</Button>
+    <div className="container-fluid py-4">
+      <div className="row justify-content-center">
+        <div className="col-12 col-xl-10 d-flex flex-column gap-4">
+          <Overview />
+        </div>
+      </div>
     </div>
   );
 }

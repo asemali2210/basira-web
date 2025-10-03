@@ -1,0 +1,27 @@
+﻿{
+  "main": {
+    "overview": "نظرة عامة",
+    "overviewSub": "ملخص والإشعارات",
+    "lessons": "الدروس",
+    "lessonsSub": "اختر فئة لبدء درس.",
+    "keepTrack": "تابع دروسك الحالية والمكتملة."
+  },
+  "stats": {
+    "inProgress": "دروس قيد التقدم",
+    "completed": "دروس مكتملة",
+    "categoriesCompleted": "فئات مكتملة",
+    "achievements": "إنجازات"
+  },
+  "table": {
+    "lessonName": "اسم الدرس",
+    "date": "التاريخ",
+    "duration": "المدة",
+    "category": "الفئة",
+    "instructor": "المعلم",
+    "child": "الطفل",
+    "status": "الحالة",
+    "active": "نشط",
+    "completed": "مكتمل"
+  },
+  "notifications": "الإشعارات"
+}

@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
 import { loadMessages } from "@/i18n/loadMessages";
 import "./globals.scss";
+import HomeLayout from "@/components/layout/HomeLayout";
+import ReduxProvider from "@/components/providers/ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -28,7 +30,8 @@ export function generateStaticParams() {
 }
 
 export default async function LocaleLayout({ children, params }) {
-  const { locale } = params ?? {};
+  const resolvedParams = await params;
+  const { locale } = resolvedParams ?? {};
 
   if (!locale || !routing.locales.includes(locale)) {
     notFound();
@@ -46,13 +49,17 @@ export default async function LocaleLayout({ children, params }) {
   const direction = locale === "ar" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={direction} data-dir={direction}>
-      <body
-        dir={direction}
-        className={`${geistSans.variable} ${geistMono.variable}`}
-      >
+    <html
+      lang={locale}
+      dir={direction}
+      data-dir={direction}
+      data-scroll-behavior="smooth"
+    >
+      <body dir={direction} className={`${geistSans.variable} ${geistMono.variable}`}>
         <NextIntlClientProvider locale={locale} messages={messages}>
-          {children}
+          <ReduxProvider>
+            <HomeLayout>{children}</HomeLayout>
+          </ReduxProvider>
         </NextIntlClientProvider>
       </body>
     </html>

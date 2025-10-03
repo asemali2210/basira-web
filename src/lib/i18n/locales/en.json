@@ -1,0 +1,27 @@
+﻿{
+  "main": {
+    "overview": "Overview",
+    "overviewSub": "Overview and notifications",
+    "lessons": "Lessons",
+    "lessonsSub": "Choose a category to begin a lesson.",
+    "keepTrack": "Keep track of your current and completed lessons."
+  },
+  "stats": {
+    "inProgress": "Lesson(s) in progress",
+    "completed": "Lessons completed",
+    "categoriesCompleted": "Categories completed",
+    "achievements": "Achievements"
+  },
+  "table": {
+    "lessonName": "Lesson name",
+    "date": "Date",
+    "duration": "Duration",
+    "category": "Category",
+    "instructor": "Instructor",
+    "child": "Child",
+    "status": "Status",
+    "active": "Active",
+    "completed": "Completed"
+  },
+  "notifications": "Notifications"
+}

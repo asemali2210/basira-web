@@ -1,0 +1,21 @@
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__grid {
+    margin: 0;
+  }
+
+  &__column {
+    display: flex;
+  }
+}
+
+@media (max-width: 575px) {
+  .stats {
+    &__grid {
+      gap: 16px;
+    }
+  }
+}

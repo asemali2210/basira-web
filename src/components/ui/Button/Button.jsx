@@ -46,12 +46,7 @@ function Button({
   }
 
   return (
-    <button
-      type={type}
-      className={classes}
-      disabled={disabled}
-      {...rest}
-    >
+    <button type={type} className={classes} disabled={disabled} {...rest}>
       {content}
     </button>
   );

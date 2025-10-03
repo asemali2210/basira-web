@@ -16,17 +16,25 @@
 
 .topBar {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;
+  margin: 1rem;
 }
 
 .logo {
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--color-purple);
+  display: flex;
+  justify-content: center;
+  img {
+    object-fit: contain;
+  }
 }
-
+.registerAsTeacher {
+  align-self: flex-end;
+  padding: 1rem;
+}
 .heroTitle {
   font-size: 2.25rem;
   font-weight: 700;
@@ -137,14 +145,24 @@
   position: relative;
   background: var(--color-yellow-light);
   min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 3rem;
 }
 
-.sidePanelImage {
+.sidePanelImageBg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.sidePanelImage {
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  position: relative;
 }
 
 .sidePanelOverlay {

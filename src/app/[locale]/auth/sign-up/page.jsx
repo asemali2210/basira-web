@@ -94,20 +94,22 @@ export default function SignUpPage() {
 
   return (
     <div className={styles.wrapper}>
-      <div className="container-fluid">
+      <div className="container-fluid g-0">
         <div className="row g-0 align-items-stretch">
-          <div className="col-12 col-lg-6 d-flex align-items-center">
+          <div className="col-12 col-lg-6 d-flex align-items-center flex-column">
+            <div className={styles.registerAsTeacher}>
+              <Button href="/auth/sign-up?role=teacher" variant="link">
+                {tAuth("registerAsTeacher")}
+              </Button>
+            </div>
             <div className={styles.card}>
               <div className={styles.topBar}>
-                <Button href="/auth/sign-up?role=teacher" variant="link">
-                  {tAuth("registerAsTeacher")}
-                </Button>
                 <span className={styles.logo}>
                   <Image
                     src="/assest/logo.png"
                     priority
                     width={100}
-                    height={100}
+                    height={70}
                     alt="basira"
                   />
                 </span>
@@ -434,8 +436,15 @@ export default function SignUpPage() {
               src="/assest/vectors-bg-sign.svg"
               alt="Decorative learning illustration"
               fill
-              className={styles.sidePanelImage}
+              className={styles.sidePanelImageBg}
               priority
+            />
+            <Image
+              src="/assest/sign-in-image.png"
+              alt="Decorative learning illustration"
+              className={styles.sidePanelImage}
+              width={1200}
+              height={800}
             />
           </div>
         </div>

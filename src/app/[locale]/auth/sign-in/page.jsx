@@ -64,15 +64,29 @@ export default function SignInPage() {
             try {
               await new Promise((resolve) => setTimeout(resolve, 1200));
 
-              const isDemoUser =
-                values.email.trim().toLowerCase() === "parent@example.com" &&
-                values.password === "Password123";
+              const response = await fetch(
+                "http://localhost:1337/api/auth/local",
+                {
+                  // Replace with your Strapi URL
+                  method: "POST",
+                  headers: {
+                    "Content-Type": "application/json",
+                  },
+                  body: JSON.stringify({
+                    identifier: values.email,
+                    password: values.password,
+                  }),
+                }
+              );
 
-              if (!isDemoUser) {
+              if (!response.ok) {
                 throw new Error("invalid_credentials");
               }
-
+              const data = await response.json();
+              console.log(data.jwt);
               helpers.setStatus({ success: true });
+
+              return data.jwt;
             } catch (error) {
               const errorKey =
                 error instanceof Error &&

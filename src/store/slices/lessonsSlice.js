@@ -1,15 +1,7 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+﻿import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getLessons, getStats } from "@/lib/api";
-import type { LessonsParams, LessonItem, StatsResponse } from "@/lib/api";
 
-export interface LessonsState {
-  stats: StatsResponse;
-  list: LessonItem[];
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: LessonsState = {
+const initialState = {
   stats: {
     inProgress: 0,
     completed: 0,
@@ -21,12 +13,11 @@ const initialState: LessonsState = {
   error: null,
 };
 
-export const fetchStats = createAsyncThunk<StatsResponse>(
-  "lessons/fetchStats",
-  async () => getStats()
+export const fetchStats = createAsyncThunk("lessons/fetchStats", async () =>
+  getStats()
 );
 
-export const fetchLessons = createAsyncThunk<LessonItem[], LessonsParams | undefined>(
+export const fetchLessons = createAsyncThunk(
   "lessons/fetchLessons",
   async (params) => getLessons(params)
 );

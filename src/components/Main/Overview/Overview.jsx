@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useMemo } from "react";
 import { useTranslations } from "next-intl";
@@ -8,17 +8,7 @@ import { useAppDispatch } from "@/hooks/useAppDispatch";
 import { useAppSelector } from "@/hooks/useAppSelector";
 import styles from "./Overview.module.scss";
 
-type NotificationVariant = "info" | "success" | "warning" | string;
-
-type NotificationLike = {
-  id: string | number;
-  text: string;
-  icon?: string;
-  type: NotificationVariant;
-  placeholder?: boolean;
-};
-
-const notificationIcons: Record<string, JSX.Element> = {
+const notificationIcons = {
   bell: <BsBell aria-hidden="true" />,
   trophy: <BsTrophy aria-hidden="true" />,
   journal: <BsJournalText aria-hidden="true" />,
@@ -40,7 +30,7 @@ export default function Overview() {
     [overviewText, t]
   );
 
-  const notifications: NotificationLike[] = loading
+  const notifications = loading
     ? Array.from({ length: 3 }, (_, index) => ({
         id: `placeholder-${index}`,
         text: t("main.keepTrack"),

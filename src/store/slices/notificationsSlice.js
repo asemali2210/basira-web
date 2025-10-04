@@ -1,17 +1,7 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+﻿import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getOverview } from "@/lib/api";
-import type { OverviewNotification, OverviewResponse } from "@/lib/api";
 
-export interface NotificationsState {
-  overviewText: string;
-  items: OverviewNotification[];
-  unreadCount: number;
-  loading: boolean;
-  error: string | null;
-}
-
-const initialState: NotificationsState = {
+const initialState = {
   overviewText: "",
   items: [],
   unreadCount: 0,
@@ -19,7 +9,7 @@ const initialState: NotificationsState = {
   error: null,
 };
 
-export const fetchOverview = createAsyncThunk<OverviewResponse>(
+export const fetchOverview = createAsyncThunk(
   "notifications/fetchOverview",
   async () => {
     return getOverview();
@@ -33,7 +23,7 @@ const notificationsSlice = createSlice({
     markAllRead(state) {
       state.unreadCount = 0;
     },
-    addNotification(state, action: PayloadAction<OverviewNotification>) {
+    addNotification(state, action) {
       state.items.unshift(action.payload);
       state.unreadCount += 1;
     },

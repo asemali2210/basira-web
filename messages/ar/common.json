@@ -3,6 +3,7 @@
   "loading": "جارٍ التحميل...",
   "tryAgain": "حاول مرة أخرى",
   "or": "أو",
+  "languageSwitcherLabel": "تبديل اللغة",
   "language": {
     "english": "الإنجليزية",
     "arabic": "العربية"

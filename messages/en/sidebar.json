@@ -1,0 +1,19 @@
+{
+  "logoAlt": "Basira logo",
+  "items": {
+    "home": "Home",
+    "lessons": "Lessons",
+    "schedule": "Schedule",
+    "inbox": "Inbox",
+    "shop": "Shop",
+    "profile": "Profile"
+  },
+  "logout": "Logout",
+  "promo": {
+    "heading": "Try Pro Edition",
+    "highlight": "for free",
+    "description": "No ads, personalized practice, and access to many teachers",
+    "cta": "Try 2 weeks free"
+  },
+  "promoImageAlt": "Illustration"
+}

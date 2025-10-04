@@ -5,8 +5,10 @@ import { Formik } from "formik";
 import * as Yup from "yup";
 import { Alert } from "antd";
 import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import { Link, useRouter } from "@/i18n/navigation";
 import Button from "@/components/ui/Button/Button";
+import useAuth from "@/hooks/useAuth/useAuth";
+import useStrapiUrl from "@/hooks/useAuth/useStrapiUrl";
 import styles from "./sign-in.module.scss";
 
 const FIELD_ORDER = ["email", "password"];
@@ -33,7 +35,10 @@ export default function SignInPage() {
   const tAuth = useTranslations("auth");
   const tCommon = useTranslations("common");
   const formRef = useRef(null);
-
+  const router = useRouter();
+  const { login } = useAuth();
+  const { isAuthenticated } = useAuth();
+  const strapiBaseUrl = useStrapiUrl();
   const validationSchema = useMemo(
     () =>
       Yup.object({
@@ -44,7 +49,9 @@ export default function SignInPage() {
       }),
     [tAuth]
   );
-
+  if (isAuthenticated) {
+    return <>welcome (asem)</>;
+  }
   return (
     <div className={styles.wrapper}>
       <div className={styles.card}>
@@ -62,30 +69,27 @@ export default function SignInPage() {
             helpers.setStatus(undefined);
 
             try {
-              await new Promise((resolve) => setTimeout(resolve, 1200));
+              helpers.setSubmitting(true);
 
-              const response = await fetch(
-                "http://localhost:1337/api/auth/local",
-                {
-                  // Replace with your Strapi URL
-                  method: "POST",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    identifier: values.email,
-                    password: values.password,
-                  }),
-                }
-              );
+              const response = await fetch(`${strapiBaseUrl}/api/auth/local`, {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  identifier: values.email,
+                  password: values.password,
+                }),
+              });
 
               if (!response.ok) {
                 throw new Error("invalid_credentials");
               }
-              const data = await response.json();
-              console.log(data.jwt);
-              helpers.setStatus({ success: true });
 
+              const data = await response.json();
+              helpers.setStatus({ success: true });
+              login(data.jwt);
+              router.replace(`/`);
               return data.jwt;
             } catch (error) {
               const errorKey =

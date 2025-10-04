@@ -1,4 +1,6 @@
-﻿{
+{
+  "notifications": "الإشعارات",
+
   "main": {
     "overview": "نظرة عامة",
     "overviewSub": "ملخص والإشعارات",
@@ -18,10 +20,9 @@
     "duration": "المدة",
     "category": "الفئة",
     "instructor": "المعلم",
-    "child": "الطفل",
+    "child": "اللغة",
     "status": "الحالة",
     "active": "نشط",
     "completed": "مكتمل"
-  },
-  "notifications": "الإشعارات"
+  }
 }

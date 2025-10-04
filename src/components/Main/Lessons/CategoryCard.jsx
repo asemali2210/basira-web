@@ -1,16 +1,10 @@
+
 "use client";
 
-import type { ReactNode } from "react";
 import { BsBookmark } from "react-icons/bs";
 import styles from "./CategoriesGrid.module.scss";
 
-type CategoryCardProps = {
-  title: string;
-  icon?: ReactNode;
-  loading?: boolean;
-};
-
-export default function CategoryCard({ title, icon, loading }: CategoryCardProps) {
+export default function CategoryCard({ title, icon, loading }) {
   const fallbackIcon = <BsBookmark aria-hidden="true" />;
   const effectiveIcon = icon ?? fallbackIcon;
 

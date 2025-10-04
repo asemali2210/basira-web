@@ -1,17 +1,9 @@
-"use client";
+﻿"use client";
 
-import type { ReactNode } from "react";
 import styles from "./StatCard.module.scss";
 
-type StatCardProps = {
-  value: number;
-  label: string;
-  icon?: ReactNode;
-  loading?: boolean;
-};
-
-export default function StatCard({ value, label, icon, loading }: StatCardProps) {
-  const displayValue = loading ? "--" : value.toLocaleString();
+export default function StatCard({ value, label, icon, loading }) {
+  const displayValue = loading ? "--" : Number(value ?? 0).toLocaleString();
 
   return (
     <div className={styles.stat}>

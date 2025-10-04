@@ -3,6 +3,7 @@
   "loading": "Loading...",
   "tryAgain": "Try again",
   "or": "or",
+  "languageSwitcherLabel": "Switch language",
   "language": {
     "english": "English",
     "arabic": "Arabic"

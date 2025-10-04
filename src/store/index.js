@@ -1,4 +1,4 @@
-import { configureStore } from "@reduxjs/toolkit";
+﻿import { configureStore } from "@reduxjs/toolkit";
 import notificationsReducer from "./slices/notificationsSlice";
 import categoriesReducer from "./slices/categoriesSlice";
 import lessonsReducer from "./slices/lessonsSlice";
@@ -12,7 +12,3 @@ export function makeStore() {
     },
   });
 }
-
-export type AppStore = ReturnType<typeof makeStore>;
-export type AppState = ReturnType<AppStore["getState"]>;
-export type AppDispatch = AppStore["dispatch"];

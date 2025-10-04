@@ -1,4 +1,4 @@
-﻿{
+{
   "main": {
     "overview": "Overview",
     "overviewSub": "Overview and notifications",
@@ -18,7 +18,7 @@
     "duration": "Duration",
     "category": "Category",
     "instructor": "Instructor",
-    "child": "Child",
+    "child": "Locale",
     "status": "Status",
     "active": "Active",
     "completed": "Completed"
